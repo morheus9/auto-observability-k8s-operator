@@ -1,4 +1,4 @@
-## Autobackup manifests operator
+## Auto observability operator
 
 
 
@@ -54,4 +54,12 @@ kubectl get crd | grep
 make generate
 make manifests
 make build
+
 make install
+make deploy IMG=morheus/observability-operator:0.0.1
+kubectl apply -k config/samples/
+
+make uninstall
+make undeploy IMG=morheus/observability-operator:0.0.1
+kubectl apply -k config/samples/
+
